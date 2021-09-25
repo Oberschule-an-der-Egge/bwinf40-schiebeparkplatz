@@ -29,5 +29,5 @@ F: H 1 links, I 2 links
 G: I 1 links
 ```
 
-Wende dein Programm mindestens auf alle Beispiele an, die im Ordner [/beispieldaten](/beispieldaten) findest, und dokumentiere die Ergebnisse.
+Wende dein Programm mindestens auf alle Beispiele an, die du im Ordner [/beispieldaten](/beispieldaten) findest, und dokumentiere die Ergebnisse.
   
