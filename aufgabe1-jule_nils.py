@@ -20,19 +20,38 @@ def read_input(filename='parkplatz0.txt'):
 
 
 def make_list(parked_cars, moving_cars):
+    # parkende Autos in eine Liste und bewegbare Autos in eine andere Liste.
+
     alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-    reihe1 = []
-    reihe2 = []
+    parkende_autos = []
+    bewegliche_autos = []
 
     for letter in alphabet:
         ende = parked_cars[1]
-        reihe1.append(letter)
+        parkende_autos.append(letter)
         if letter == ende:
             break
-    print(reihe1)
+    print(parkende_autos)
 
-    print(moving_cars[0])
+    n = 1
 
+    while n < len(parkende_autos):
+        bewegliche_autos.append("")
+        n = n+1
+
+
+    for car in moving_cars:
+        name, number = car.split()
+        print(name, number)
+
+def move_moving_cars():
+    # berechnet wie sich die Schiebeautos bewegen müssten, damit das gesuchte Auto ausparken kann.
+
+    pass
+
+def print_results():
+    # gibt die Lösung aus.
+    pass
 
 
 if __name__ == '__main__':
