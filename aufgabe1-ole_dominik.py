@@ -19,20 +19,27 @@ def read_input(filename='parkplatz0.txt'):
     return moving_cars_total, parked_cars, moving_cars
 
 def make_list(moving_cars_total, parked_cars, moving_cars):
-
+    ''' Liste Modell erstellen
+    erstellt eine Liste in der Länge der Gesamtanzahl der geparkten Autos in parked_cars
+    '''
     last_car = parked_cars[1]
     number = string.ascii_uppercase.index(last_car)
 
     model = [0] * (number + 1)
     print(model)
 
+    for car in moving_cars:
+        letter, number = car.split()
+        if int(number) < len(model):
+            model[int(number)] = 1
+            model[int(number) + 1] = 1
+
+        #wenn Auto auf letztem parkplatz steht, kann funktion so nicht ausgeführt werden -> edge cases prüfen !!!
+
+    print(model)
     return (model)
-
-def compare_lists(moving_cars_total, model):
-    pass
-
 
 if __name__ == '__main__':
     moving_cars_total, parked_cars, moving_cars = read_input()
     model = make_list(moving_cars_total, parked_cars, moving_cars)
-    compare_lists(moving_cars_total, model)
+
