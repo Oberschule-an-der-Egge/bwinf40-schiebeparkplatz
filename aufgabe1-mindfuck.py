@@ -16,19 +16,26 @@ def read_input(filename='parkplatz0.txt'):
     print(moving_cars_total)
     print(moving_cars)
 
-    return
+    return parked_cars, moving_cars
 
-def parkinglot():
+
+def make_parkinglot(moving_cars):
+    """
+    Die Funktion parkinglot() gibt den Autos auf dem Parkplatz einen Index und prüft, welche Autos ausparken können und
+    welche nicht.
+    """
 
     parkinglot = ["A", "B", "C", "D", "E", "F", "G"]
 
-    h = 2
-    i = 5
+    for element in moving_cars:
+        letter, number = element.split()
+        letter = number
+        print(letter)
 
     for space in parkinglot:
         index = parkinglot.index(space)
         print(index)
-        if index in [h, h + 1, i, i + 1]:
+        if index in [number, number + 1]:
             print("besetzt\n")
             #move_cars()
         else:
@@ -36,6 +43,11 @@ def parkinglot():
 
 
 def move_cars(index):
+    """
+    Die Funktion move_cars() prüft, wie die Autos, die im Weg stehen, verschoben werden müssen, damit die Autos auf den Parkplätzen
+    ausparken können.
+    """
+
     while index in [h, h + 1, i, i + 1]:
         if index == h:
             check = h + 2
@@ -55,7 +67,13 @@ def move_cars(index):
             pass
 
 
+def print_result():
+    """
+    Zeigt die Rangieranweisungen als Lösung an.
+    """
+    pass
 
 if __name__ == '__main__':
-    read_input()
-    parkinglot()
+    parked_cars, moving_cars = read_input()
+    make_parkinglot(moving_cars)
+    print_result()
