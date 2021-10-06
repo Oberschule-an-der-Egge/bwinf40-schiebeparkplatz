@@ -26,20 +26,32 @@ def make_list(moving_cars_total, parked_cars, moving_cars):
     number = string.ascii_uppercase.index(last_car)
 
     model = [0] * (number + 1)
-    print(model)
+
+
 
     for car in moving_cars:
         letter, number = car.split()
-        if int(number) < len(model):
-            model[int(number)] = 1
-            model[int(number) + 1] = 1
-
-        #wenn Auto auf letztem parkplatz steht, kann funktion so nicht ausgeführt werden -> edge cases prüfen !!!
-
+        number = int(number)
+        if number < len(model):
+            model[number] = 1
+            model[number + 1] = 1
     print(model)
-    return (model)
 
-if __name__ == '__main__':
-    moving_cars_total, parked_cars, moving_cars = read_input()
-    model = make_list(moving_cars_total, parked_cars, moving_cars)
+    return model
 
+def print_result(model):
+
+    counter = 0
+    dict = {}
+
+    while counter <= len(model) - 1:
+        letter = string.ascii_uppercase[counter]
+
+        if model[counter] == 0:
+            dict[letter] = 'frei'
+        else:
+            
+            pass
+        counter += 1
+
+    print(dict)
