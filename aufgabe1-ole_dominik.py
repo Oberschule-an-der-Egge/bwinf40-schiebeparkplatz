@@ -55,3 +55,10 @@ def print_result(model):
         counter += 1
 
     print(dict)
+    
+
+
+if __name__ == '__main__':
+    moving_cars_total, parked_cars, moving_cars = read_input()
+    model = make_list(moving_cars_total, parked_cars, moving_cars)
+    print_result(model)
