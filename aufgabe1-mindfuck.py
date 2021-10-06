@@ -27,22 +27,25 @@ def make_parkinglot(moving_cars):
 
     parkinglot = ["A", "B", "C", "D", "E", "F", "G"]
 
+    occupiedlot = {}
+
     for element in moving_cars:
         letter, number = element.split()
-        letter = number
-        print(letter)
+        number = int(number)
+        occupiedlot[letter] = number
+        occupiedlot[letter.lower()] = number + 1
+        print(occupiedlot)
 
     for space in parkinglot:
         index = parkinglot.index(space)
-        print(index)
-        if index in [number, number + 1]:
-            print("besetzt\n")
-            #move_cars()
+        if index in occupiedlot.values():
+            print(f"{parkinglot[index]}: besetzt\n")
+            #move_cars(occupiedlot, index)
         else:
-            print("frei\n")
+            print(f"{parkinglot[index]}: frei")
 
 
-def move_cars(index):
+def move_cars(index, occupiedlot):
     """
     Die Funktion move_cars() prüft, wie die Autos, die im Weg stehen, verschoben werden müssen, damit die Autos auf den Parkplätzen
     ausparken können.
